@@ -417,6 +417,40 @@
         <div class="container">
           <section class="online">
             <h2 class="online-title title">Online-booking</h2>
+            <form class="online-form">
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-name"
+                  name="online-name"
+                  type="text"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-name">Name*</label>
+              </div>
+              <div class="online-field">
+                <input
+                  class="online-input online-item"
+                  id="online-tel"
+                  name="online-tel"
+                  type="tel"
+                  required
+                  placeholder=" "
+                />
+                <label class="online-label" for="online-tel">Phone*</label>
+              </div>
+              <div class="online-field online-field-text">
+                <textarea
+                  class="online-textarea online-item"
+                  id="online-message"
+                  name="online-message"
+                  placeholder=" "
+                ></textarea>
+                <label class="online-label" for="online-message">Message</label>
+              </div>
+              <button class="btn online-btn" type="submit">Send</button>
+            </form>
           </section>
           <section class="contacts">
             <h2 class="contacts-title title">Contacts</h2>
@@ -424,7 +458,7 @@
         </div>
       </div>
     </main>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-close" data-modal-close type="button">
           <svg class="modal-close-icon" width="15" height="15">
@@ -472,6 +506,7 @@
               minlength="10"
               placeholder="+3__ (__) ___-__-__"
               required
+              value="+380"
             />
           </div>
           <div class="modal-field">
@@ -484,18 +519,22 @@
             ></textarea>
           </div>
 
-          <pre>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum
-            voluptates, quam ad r
-            atione magni ne
-            cessitatibus ipsum sequi
-            voluptatem lab
-            
-            
-            
-            ore facilis voluptate dicta. Quaerat, animi qui ipsum
-            corrupti laudantium veniam aspernatur!
-          </pre>
+          <div class="modal-field">
+            <input
+              class="input-check hidden"
+              id="policy"
+              type="checkbox"
+              value="true"
+            />
+            <label class="check-text" for="policy">
+              <span>
+                <svg class="check-icon" width="10" height="8">
+                  <use href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              Політика користування</label
+            >
+          </div>
           <button type="submit">Вперед</button>
         </form>
       </div>
