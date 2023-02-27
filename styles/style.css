@@ -44,6 +44,8 @@ address {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 body {
@@ -498,8 +500,8 @@ body {
 /*------------------- BARBERS----------------- */
 
 .barbers {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 .barbers-pre-title {
@@ -514,11 +516,12 @@ body {
 
 .barbers-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 }
 
 .barbers-item {
-  width: calc((100% - 60px) / 3);
+  width: 100%;
 }
 
 .barbers-item:hover .barbers-cover-text {
@@ -595,17 +598,18 @@ body {
 }
 
 .test {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 .test-list {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .test-item {
-  width: calc((100% - 150px) / 6);
+  width: calc((100% - 30px) / 2);
   height: 90px;
 }
 
@@ -646,24 +650,23 @@ body {
 /*------------------- GALLERY----------------- */
 
 .gallery-pre-title {
-  margin-bottom: 44px;
+  margin-bottom: 71px;
   color: #303030;
 }
 
 .gallery {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
 
 .gallery-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: 50px;
+  gap: 30px;
 }
 
 .gallery-item {
-  width: calc((100% - 90px) / 4);
+  width: 100%;
 }
 
 .contact-wrap {
