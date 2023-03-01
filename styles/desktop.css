@@ -3,6 +3,25 @@
     max-width: 1200px;
   }
 
+  .hero-wrap {
+    padding-bottom: 210px;
+
+    background-image: var(--l-gra), url(../images/hero-bg.jpeg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-wrap {
+      background-image: var(--l-gra), url(../images/hero-bg-2x.jpeg);
+    }
+  }
+
+  .hero-title {
+    font-size: 72px;
+    line-height: 1.18;
+  }
+
   .barbers > .container {
     max-width: 1200px;
   }

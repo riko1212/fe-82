@@ -2,4 +2,7 @@
   .container {
     max-width: 448px;
   }
+  .hero-title {
+    font-size: 54px;
+  }
 }

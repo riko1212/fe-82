@@ -54,7 +54,6 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -66,6 +65,10 @@ body {
 
 .list {
   list-style: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 .hidden {
   position: absolute;
@@ -146,46 +149,101 @@ body {
 }
 .header-logo {
   margin-right: 130px;
-}
-.header-list {
-  display: flex;
-  gap: 30px;
-}
-.header-item {
-}
-.header-link {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
-  color: #ffffff;
-  transition: color 300ms linear;
+  background-color: #ffffff;
 }
 
-.header-link:is(:hover, :focus) {
-  color: #ff6c00;
+.header-list,
+.header-tel,
+.header-btn {
+  display: none;
 }
 
 /* .header-link:focus {
   color: #ff6c00;
 } */
 
-.header-tel {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-right: 30px;
+.mob-menu {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
-.header-btn {
-  color: var(--main-btn-color);
+
+.mob-menu > .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.menu-close {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+.mob-menu-list {
+  margin-bottom: 24px;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mob-menu-link {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: calc(25 / 18);
+  letter-spacing: 0.1em;
+
+  color: #303030;
+}
+
+.mob-menu-tel {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: calc(25 / 18);
+  letter-spacing: 0.1em;
+
+  color: #303030;
+  margin-bottom: 24px;
+  display: block;
+}
+.mob-menu-btn {
+  margin-bottom: 64px;
+}
+
+.mob-soc-list {
+}
+.mob-soc-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mob-soc-link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: calc(19 / 14);
+  letter-spacing: 0.2em;
+  color: #303030;
 }
 
 /*------------------- HERO----------------- */
 
 .hero {
+  background-color: #797c8a;
+  background-image: var(--l-gra), url(../images/hero-bg-mob.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: var(--l-gra), url(../images/hero-bg-mob-2x.jpeg);
+  }
 }
 
 .hero-container {
@@ -193,50 +251,14 @@ body {
 }
 
 .hero-soc {
-  width: 100px;
-  display: flex;
-  align-items: flex-end;
-  padding-left: 27px;
-  padding-bottom: 40px;
-}
-
-.hero-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  transform: rotate(-90deg) translatey(100%);
-  transform-origin: bottom left;
-}
-
-.hero-list::before {
-  content: '';
-  width: 60px;
-  height: 1px;
-  background-color: #303030;
-}
-
-.hero-item {
+  display: none;
 }
 
 .hero-wrap {
-  background-color: #797c8a;
-  background-image: var(--l-gra), url(../images/hero-bg.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  flex-grow: 1;
-  padding: 272px 100px 208px;
-}
-.hero-link {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: var(--typical-lh);
-  letter-spacing: 0.2em;
-  color: #303030;
-}
+  /* background-image: var(--l-gra), url(../images/hero-bg.jpeg); */
 
-.hero-link:is(:hover, :focus) {
-  color: #ff6c00;
+  flex-grow: 1;
+  padding: 210px 0px;
 }
 
 .hero-pre-title {
@@ -246,8 +268,8 @@ body {
 
 .hero-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 72px;
-  line-height: 1.18;
+  font-size: 48px;
+  line-height: 1.17;
   letter-spacing: 0.05em;
   color: var(--main-title-color);
   margin-bottom: 20px;
@@ -255,7 +277,7 @@ body {
   align-items: baseline;
 }
 
-.hero-title::before {
+/* .hero-title::before {
   content: '';
   width: 50px;
   height: 50px;
@@ -267,21 +289,21 @@ body {
 
 .hero-title:hover::before {
   color: teal;
-}
+} */
 
-.hero-title::after {
+/* .hero-title::after {
   content: '!';
 
   color: red;
-}
+} */
 
 .hero-after-title {
-  font-size: 18px;
-  line-height: 1.67;
+  font-size: 16px;
+  line-height: 1.62;
   letter-spacing: 0.02em;
 
   color: #9da4bd;
-  max-width: 360px;
+  max-width: 320px;
 }
 
 /*------------------- ABOUT----------------- */

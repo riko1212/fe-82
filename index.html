@@ -29,7 +29,7 @@
     <link href="./styles/desktop.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="container header-container">
         <nav class="header-navigation">
           <a class="header-logo" href>
@@ -59,10 +59,63 @@
         <button class="header-btn btn" data-modal-open type="button">
           Online-booking
         </button>
+        <button class="menu-open" data-menu-open type="button">O</button>
       </div>
-    </header> -->
+      <div class="mob-menu is-hidden" data-menu>
+        <div class="container">
+          <div>
+            <button class="menu-close" data-menu-close type="button">X</button>
+            <ul class="mob-menu-list list">
+              <li class="mob-menu-item">
+                <a class="mob-menu-link link" href>About</a>
+              </li>
+
+              <li class="mob-menu-item">
+                <a class="mob-menu-link link" href="./portfolio.html"
+                  >Services and prices</a
+                >
+              </li>
+              <li class="mob-menu-item">
+                <a class="mob-menu-link link" href="#barbers">Barbers</a>
+              </li>
+              <li class="mob-menu-item">
+                <a class="mob-menu-link link" href>Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <a class="mob-menu-tel link" href="tel:+380441111111"
+              >+38 044 111 11 11</a
+            >
+            <button class="mob-menu-btn btn" data-modal-open type="button">
+              Online-booking
+            </button>
+            <ul class="mob-soc-list list">
+              <li class="mob-soc-item">
+                <a
+                  class="mob-soc-link link"
+                  href
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Instagram</a
+                >
+              </li>
+              <li class="mob-soc-item">
+                <a
+                  class="mob-soc-link link"
+                  href
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Youtube</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
     <main>
-      <!-- <section class="hero">
+      <section class="hero">
         <div class="container hero-container">
           <div class="hero-soc">
             <ul class="hero-list list">
@@ -88,16 +141,14 @@
           </div>
           <div class="hero-wrap">
             <p class="hero-pre-title pre-title">A hair salon for men in Kyiv</p>
-            <h1 class="hero-title animate__animated animate__hinge">
-              BarberShop
-            </h1>
+            <h1 class="hero-title">BarberShop</h1>
             <p class="hero-after-title">
               We are experts in trendy men’s haircuts. We work quickly,
               carefully and with style.
             </p>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- <section class="about">
         <div class="container about-container">
           <ul class="about-list list">
@@ -233,6 +284,10 @@
                 <img
                   src="./images/barbers-img-1.jpeg"
                   alt="barber picture"
+                  srcset="
+                    ./images/barbers-img-1.jpeg    1x,
+                    ./images/barbers-img-1-2x.jpeg 2x
+                  "
                   width="370"
                   height="346"
                 />
@@ -350,12 +405,35 @@
           <h2 class="hidden">Gallery</h2>
           <ul class="gallery-list list">
             <li class="gallery-item">
-              <img
-                src="./images/gallery-img-1.jpeg"
-                alt="barbers gallery"
-                width="270"
-                height="360"
-              />
+              <picture>
+                <source
+                  srcset="
+                    ./images/gallery-img-1.jpeg    1x,
+                    ./images/gallery-img-1-2x.jpeg 2x
+                  "
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="
+                    ./images/gallery-img-1-tab.jpeg    1x,
+                    ./images/gallery-img-1-tab-2x.jpeg 2x
+                  "
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="
+                    ./images/gallery-img-1-mob.jpeg    1x,
+                    ./images/gallery-img-1-mob-2x.jpeg 2x
+                  "
+                  media="(max-width: 767px)"
+                />
+                <img
+                  src="./images/gallery-img-1-mob.jpeg"
+                  alt="barbers gallery"
+                  width="418"
+                  height="360"
+                />
+              </picture>
             </li>
             <li class="gallery-item">
               <img
@@ -517,5 +595,6 @@
       });
     </script>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
